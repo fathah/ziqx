@@ -1,6 +1,6 @@
 const MainLayout = (props) => {
     return (
-        <div className="mx-14 lg:mx-52">
+        <div className={"px-14 md:px-24 lg:px-40 "+ props.className} style={props.style}>
             {props.children}
         </div>
     );

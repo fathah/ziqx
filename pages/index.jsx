@@ -5,12 +5,23 @@ import Lottie from "lottie-react";
 import robot from "../asset/robot.json";
 import Logo from '../comps/Logo';
 import Footer from '../comps/Footer';
+import Clients from '../comps/Clients';
+
 import MainLayout from '../comps/Layouts/MainLayout';
+import { useEffect } from 'react';
 
 export default function Home() {
+  var logoHeight;
+  useEffect(()=>{
+    var logoElement = document.getElementById("logo");
+    logoHeight = logoElement.offsetHeight;
+
+  },[]);
   
   return (
-  <> 
+  <div style={{
+    backgroundImage:"url('/imgs/pattern.png')"
+  }}> 
   
   <Head>
   <title>Ziqx Creative Planet</title>
@@ -25,30 +36,39 @@ export default function Home() {
 
   </Head>
   <Logo/>
-    <MainLayout>
-  
-    <section className="lg:flex"
+    <MainLayout
+    >
+
+<div style={{
+  height:`${logoHeight}px`
+}}>
+
+</div>
+    <section className="md:grid grid-cols-2"
     style={{
-      height:"95vh"
+      minHeight:"80vh",
+      
     }}
     >
-    <div className="flex justify-center lg:order-2">
+    <div className="grid grid-cols-1 content-center  md:order-2">
     <Lottie animationData={robot} className="w-10/12 mt-28" />
     </div>
     
-   <div className="flex justify-center items-center lg:order-1">
+   <div className="grid content-end  lg:order-1 mb-32">
   <section>
-  <h1 className="font-bold text-5xl lg:text-7xl">
-      Bridging the <span className="text-yellow-500">next generation</span> solutions
+  <h1 className="font-bold text-4xl lg:text-5xl xl:text-7xl">
+      Bridging with the <span className="text-yellow-400">next generation</span> solutions
     </h1>
-  <a 
+  {/* <a 
   className="text-gray-400 inline-block mt-2" 
-  href="mailto:info@ziqx.in">info@ziqx.in</a>
+  href="mailto:info@ziqx.in">info@ziqx.in</a> */}
   </section>
    </div>
     </section>
+   
     </MainLayout>
+    <Clients/>
    <Footer/>
-    </>
+    </div>
   )
 }
