@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Lottie from "lottie-react";
 import robot from "../asset/robot.json";
 import Logo from '../comps/Logo';
 import Footer from '../comps/Footer';
 import Clients from '../comps/Clients';
+import Products from '../comps/Products';
+import Delivering from '../comps/Delivering';
 
 import MainLayout from '../comps/Layouts/MainLayout';
 import { useEffect } from 'react';
@@ -67,7 +68,10 @@ export default function Home() {
     </section>
    
     </MainLayout>
+    <Products/>
+    <Delivering/>
     <Clients/>
+   
    <Footer/>
     </div>
   )
