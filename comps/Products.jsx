@@ -12,8 +12,8 @@ const Products = () => {
         {name:"Zaimart Online Store", logo:"zaimart.png"},
         {name:"Zoozle Online Canvas", logo:"zoozle.png"},
         {name:"Z Auth", logo:"zauth.png"},
-        {name:"Fabex Framework", logo:"fabex.png"},
         {name:"Zinga Secure Messenger", logo:"zinga.png"},
+        {name:"Fabex Framework", logo:"fabex.png"},
         {name:"ZiDG ZIqx Developers Group", logo:"zidg.png"},
     ];
     return (<div className="bg-white py-8 px-10 lg:px-20">

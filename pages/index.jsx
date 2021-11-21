@@ -37,18 +37,14 @@ export default function Home() {
 
   </Head>
   <Logo/>
-    <MainLayout
-    >
+   
 
-<div style={{
-  height:`${logoHeight}px`
-}}>
 
-</div>
-    <section className="md:grid grid-cols-2"
+    <section className="md:grid grid-cols-2 px-14 md:px-24 lg:px-40 "
     style={{
-      minHeight:"80vh",
-      
+      minHeight:"100vh",
+      backgroundImage:"url('/imgs/mainbg.jpg')",
+      backgroundSize:"cover",
     }}
     >
     <div className="grid grid-cols-1 content-center  md:order-2">
@@ -57,8 +53,12 @@ export default function Home() {
     
    <div className="grid content-end  lg:order-1 mb-32">
   <section>
-  <h1 className="font-bold text-4xl lg:text-5xl xl:text-7xl">
-      Bridging with the <span className="text-yellow-400">next generation</span> solutions
+  <h1 className="font-bold text-4xl lg:text-5xl xl:text-7xl"
+
+  >
+      Bridging with the <span 
+      // className="text-yellow-400"
+      >next generation</span> solutions
     </h1>
   {/* <a 
   className="text-gray-400 inline-block mt-2" 
@@ -67,7 +67,7 @@ export default function Home() {
    </div>
     </section>
    
-    </MainLayout>
+  
     <Products/>
     <Delivering/>
     <Clients/>
