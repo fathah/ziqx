@@ -12,12 +12,7 @@ import MainLayout from '../comps/Layouts/MainLayout';
 import { useEffect } from 'react';
 
 export default function Home() {
-  var logoHeight;
-  useEffect(()=>{
-    var logoElement = document.getElementById("logo");
-    logoHeight = logoElement.offsetHeight;
 
-  },[]);
   
   return (
   <div style={{

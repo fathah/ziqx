@@ -16,7 +16,7 @@ const Products = () => {
         {name:"Fabex Framework", logo:"fabex.png"},
         {name:"ZiDG ZIqx Developers Group", logo:"zidg.png"},
     ];
-    return (<div className="bg-white py-8 px-10 lg:px-20">
+    return (<div className="bg-white py-8 px-4 lg:px-20">
         <header className="mx-10 lg:mx-52 my-2">
             <h2 className="text-center text-gray-400 font-bold text-2xl">
                 OUR PRODUCTS</h2>
@@ -31,7 +31,7 @@ className="flex flex-wrap justify-center items-center">
             className="flex text-white font-bold py-5"
             >
             <img src={`/imgs/products/${prdct.logo}`}
-            className="mx-4 lg:mx-14 h-20 lg:h-28"
+            className="mx-4 lg:mx-14 h-16 lg:h-28 product-logo"
             
             alt={prdct.name} />
             </div>

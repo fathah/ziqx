@@ -28,3 +28,14 @@ backdrop-filter: blur( 5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
+
+
+.product-logo{
+  filter:grayscale(100%);
+  transition:0.6s ease;
+}
+
+.product-logo:hover{
+  filter:grayscale(0%);
+  transform: scale(1.1);
+}
