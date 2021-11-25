@@ -13,6 +13,14 @@ import { useEffect } from 'react';
 
 export default function Home() {
 
+  useEffect(() => {
+  document.addEventListener('mousemove', (e)=>{
+    const x = e.clientX;
+    const y = e.clientY;
+    document.getElementById('robot').style.transform = `translate(${x/10}px, ${y/10}px)`;
+  });
+ 
+  }, []);
   
   return (
   <div style={{
@@ -43,7 +51,7 @@ export default function Home() {
     }}
     >
     <div className="grid grid-cols-1 content-center  md:order-2">
-    <Lottie animationData={robot} className="w-10/12 mt-28" />
+    <Lottie animationData={robot} id="robot" className="w-10/12 mt-28" />
     </div>
     
    <div className="grid content-end  lg:order-1 mb-32">
