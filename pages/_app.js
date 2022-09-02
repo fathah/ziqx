@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 import { useEffect } from 'react'
 
@@ -16,6 +18,14 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 
 },[])
+
+useEffect(() => {
+  AOS.init({
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 50,
+  });
+}, []);
 
 
   return <Component {...pageProps} />
