@@ -5,18 +5,29 @@ import Clients from '../comps/Clients';
 import Products from '../comps/Products';
 import Delivering from '../comps/Delivering';
 import { useEffect } from 'react';
+import { useRouter } from 'next/dist/client/router';
+import Cookies from 'js-cookie'
 
 export default function Home() {
+  const router = useRouter()
+  const API_ROOT = "https://api.ziqx.in/auth/";
 
-  // useEffect(() => {
-  // document.addEventListener('mousemove', (e)=>{
-  //   const x = e.clientX;
-  //   const y = e.clientY;
-  //   document.getElementById('robot').style.transform = `translate(${x/10}px, ${y/10}px)`;
-  // });
- 
-  // }, []);
-  
+
+  useEffect(async() => {
+    if (!router.isReady) return;
+    const query = router.query;
+    if(query!=null && query.tok!=null && query.tok!=undefined){
+      let token = query.tok.split("-")[1];
+      const res = await fetch(`${API_ROOT}validateJWT.php?token=${token}`).then(res=>res.json()).catch(err=>console.log(err));
+      if(res.status=='success'){
+        Cookies.set('token', token);
+      }else{
+        console.log('🎃 Token is invalid');
+      }
+      
+    }
+  }, [router.isReady, router.query]);
+
   return (
   <div style={{
     backgroundImage:"url('/imgs/pattern.png')"
@@ -40,12 +51,13 @@ export default function Home() {
 
 
     <section className="w-full h-screen flex  lg:items-center"
+    id="topImage"
     style={{
       minHeight:"100vh",
       backgroundImage:"url('/imgs/mainbg.jpg')",
       //backgroundColor:"#000",
       backgroundSize:"cover",
-      backgroundPosition:"center",
+      //backgroundPosition:"center",
     }}
     >
     {/* <div className="grid grid-cols-1 content-center  md:order-2">
@@ -54,12 +66,24 @@ export default function Home() {
     
    
   
-  <h1 className="font-bold text-4xl lg:text-5xl xl:text-7xl mx-10 lg:mx-20  mt-32"
+  <div className='mx-10 lg:mx-20'>
+  <h1 className="font-bold text-5xl lg:text-6xl xl:text-7xl   mt-32 lg:mt-6"
+  style={{
+    lineHeight:"1.1",
+  }}
+
   data-aos="fade-up"
   data-aos-duration="1000"
   >
-     Welcome to the  <br />next gen <br /> creative <br />planet
+    Techology  <br />is a jargon
+     <br /> without <br />
+    <span className="bg-white inline-block px-2 pb-1">Ziqx</span>
     </h1>
+    <p className='mt-6 lg:w-7/12'>
+      Presenting digital solutions in a minimal & comprehensive eco-system.
+    </p>
+    {/* <button className="bg-yellow-400 hover:bg-yellow-500  lg:text-xl px-4 py-2 lg:py-3 rounded mt-3">Know More</button> */}
+  </div>
   {/* <a 
   className="text-gray-400 inline-block mt-2" 
   href="mailto:info@ziqx.in">info@ziqx.in</a> */}

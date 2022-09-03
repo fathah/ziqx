@@ -10,9 +10,9 @@ const Delivering = () => {
         //     backgroundRepeat: 'no-repeat',
         // }}
         >
-        <div className="w-full md-6/12 lg:w-5/12 flex justify-center ">
-             {/* <Lottie animationData={app} className="w-8/12 md:w-full" /> */}
-        </div>
+        {/* <div className="w-full md-6/12 lg:w-5/12 flex justify-center ">
+             <Lottie animationData={app} className="w-8/12 md:w-full" />
+        </div> */}
         <div className=" md:ml-10 md:pt-5 lg:ml-20">
             <h1 className="text-3xl lg:text-6xl font-bold text-white"
             >Delivering the best</h1>
