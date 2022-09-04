@@ -2,19 +2,21 @@ import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import type { AppProps } from 'next/app'
+
 
 import { useEffect } from 'react'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
 useEffect(()=>{
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+var Tawk_API:any=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
 s1.src='https://embed.tawk.to/616fc9f0f7c0440a591f190d/1fieapmaq';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+s0.parentNode!.insertBefore(s1,s0);
 })();
 
 },[])

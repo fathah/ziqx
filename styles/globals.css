@@ -1,6 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
     font-family: 'Ubuntu', sans-serif;
@@ -42,4 +45,22 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   background: rgba( 0, 0, 0, 0.9 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
 
+}
+
+body{
+  background-color: #F4F2ED;
+}
+
+.up-down-anim{
+  -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 2s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }
