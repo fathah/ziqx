@@ -7,6 +7,8 @@
 
 *{
     font-family: 'Ubuntu', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+
 }
 ::-webkit-scrollbar {
     width: 5px;
