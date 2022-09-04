@@ -22,7 +22,9 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-
+  body{
+    background-color: rgb(244, 242, 237);
+  }
   .nav{
     background: rgba( 255, 255, 255, 0.25 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
@@ -47,9 +49,7 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
 
 }
 
-body{
-  background-color: #F4F2ED;
-}
+
 
 .up-down-anim{
   -webkit-animation: mover 2s infinite  alternate;
@@ -63,4 +63,13 @@ body{
 @keyframes mover {
   0% { transform: translateY(0); }
   100% { transform: translateY(-20px); }
+}
+
+.zx-btn{
+  box-shadow: 0px 0px 0px rgba( 0, 0, 0, 1 );
+  transition: 0.3s ease;
+}
+.zx-btn:hover{
+  transform: translate(-5px,-5px);
+  
 }

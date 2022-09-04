@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie'
 import MetaHead from '../comps/common/MetaHead';
 import { useRouter } from 'next/dist/client/router';
+import ZxButton from '../comps/Layouts/ZxButton';
 
 export default function Home() {
   const router = useRouter()
@@ -52,13 +53,13 @@ export default function Home() {
     style={{
       minHeight:"100vh",
       //backgroundImage:"url('/imgs/mainbg.jpg')",
-      //backgroundColor:"#000",
+      backgroundColor:"rgb(244, 242, 237,0.7)",
       backgroundSize:"cover",
       //backgroundPosition:"center",
     }}
     >
   <div className='order-2 lg:order-1'>
-  <h1 className="font-bold text-5xl md:text-6xl xl:text-7xl mt-6 lg:mt-6"
+  <h1 className="font-bold text-5xl md:text-6xl xl:text-7xl mt-2"
   style={{
     lineHeight:"1.1",
   }}
@@ -75,7 +76,10 @@ export default function Home() {
     >
       Presenting digital solutions in a minimal & comprehensive eco-system.
     </p>
-    {/* <button className="bg-yellow-400 hover:bg-yellow-500  lg:text-xl px-4 py-2 lg:py-3 rounded mt-3">Know More</button> */}
+ 
+    <ZxButton className="mt-4">
+      Know More
+    </ZxButton>
   </div>
 
 <div className='order-1 lg:order-2 w-full flex justify-center mt-28 lg:mt-4'>

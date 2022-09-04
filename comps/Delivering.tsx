@@ -2,17 +2,9 @@
 
 const Delivering = () => {
     return (
-        <section className="md:flex px-14 md:px-24 lg:px-40 py-16 bg-black"
-        // style={{
-        //     backgroundImage: `url('/imgs/deliver.jpg')`,
-        //     backgroundSize: 'cover',
-        //     backgroundPosition: 'center',
-        //     backgroundRepeat: 'no-repeat',
-        // }}
-        >
-        {/* <div className="w-full md-6/12 lg:w-5/12 flex justify-center ">
-             <Lottie animationData={app} className="w-8/12 md:w-full" />
-        </div> */}
+        <div>
+            <section className=" md:flex px-14 md:px-24 lg:px-40 py-16 bg-black">
+
         <div className=" md:ml-10 md:pt-5 lg:ml-20">
             <h1 className="text-3xl lg:text-6xl font-bold text-white"
             >Delivering the best</h1>
@@ -29,6 +21,8 @@ const Delivering = () => {
 
             </p>
         </div></section>
+        </div>
+        
     );
 }
  
