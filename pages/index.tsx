@@ -1,13 +1,15 @@
-import NavBar from '../comps/NavBar';
-import Footer from '../comps/Footer';
-import Clients from '../comps/Clients';
-import Products from '../comps/Products';
-import Delivering from '../comps/Delivering';
+import NavBar from '../comps/common/NavBar';
+import Footer from '../comps/common/Footer';
+import Clients from '../comps/Home/Clients';
+import Products from '../comps/Home/Products';
+import Delivering from '../comps/Home/Delivering';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie'
 import MetaHead from '../comps/common/MetaHead';
 import { useRouter } from 'next/dist/client/router';
 import ZxButton from '../comps/Layouts/ZxButton';
+import MainSection from '../comps/Home/MainSection';
+import What from '../comps/Home/What';
 
 export default function Home() {
   const router = useRouter()
@@ -48,47 +50,8 @@ export default function Home() {
    
 
 
-    <section className="w-full h-screen flex flex-col lg:flex-row  lg:items-center px-10 lg:px-20 xl:px-40 "
-    id="topImage"
-    style={{
-      minHeight:"100vh",
-      //backgroundImage:"url('/imgs/mainbg.jpg')",
-      backgroundColor:"rgb(244, 242, 237,0.7)",
-      backgroundSize:"cover",
-      //backgroundPosition:"center",
-    }}
-    >
-  <div className='order-2 lg:order-1'>
-  <h1 className="font-bold text-5xl md:text-6xl xl:text-7xl mt-2"
-  style={{
-    lineHeight:"1.1",
-  }}
-
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  >
-    Techology  is a jargon
-    without <br />
-    <span className="bg-yellow-400 inline-block px-2 pb-1 mt-3">Ziqx</span>
-    </h1>
-    <p className='mt-6 lg:w-7/12' data-aos="fade-up"
-      data-aos-duration="1200"
-    >
-      Presenting digital solutions in a minimal & comprehensive eco-system.
-    </p>
- 
-    <ZxButton className="mt-4">
-      Know More
-    </ZxButton>
-  </div>
-
-<div className='order-1 lg:order-2 w-full flex justify-center mt-28 lg:mt-4'>
-  <img src="/imgs/ziqx-side.svg" className='w-full md:w-8/12 xl:w-10/12 up-down-anim' alt="" />
-</div>
- 
-   
-    </section>
-   
+  <MainSection></MainSection>
+  <What></What>
   
     <Products/>
     <Delivering/>
