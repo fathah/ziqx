@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie'
 import MetaHead from '../comps/common/MetaHead';
 import { useRouter } from 'next/dist/client/router';
-import ZxButton from '../comps/Layouts/ZxButton';
 import MainSection from '../comps/Home/MainSection';
 import What from '../comps/Home/What';
+import BottomCTA from '../comps/Home/BottomCTA';
 
 export default function Home() {
   const router = useRouter()
@@ -56,7 +56,7 @@ export default function Home() {
     <Products/>
     <Delivering/>
     <Clients/>
-   
+    <BottomCTA></BottomCTA>
    <Footer/>
     </div>
   )

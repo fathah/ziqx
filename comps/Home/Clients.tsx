@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 
 
 const Clients = () => {
@@ -21,6 +22,12 @@ const Clients = () => {
             <h2 className="text-center text-gray-400 font-bold text-2xl">
                 TRUSTED BY</h2>
         </header>
+        <Marquee
+        speed={10}
+        gradientWidth={100}
+        >
+
+
     <div
 className="flex flex-wrap justify-center items-center"
 >
@@ -37,7 +44,7 @@ className="flex flex-wrap justify-center items-center"
             </div>
         ))
     }
- </div>
+ </div></Marquee>
     </div>
     );
 }

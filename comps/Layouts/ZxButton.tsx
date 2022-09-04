@@ -1,17 +1,18 @@
 const ZxButton = (props:any) => {
     return (
-        <div className={`relative ${props.className??''}`}
+        <div 
+        id={props.id}
+        className={`relative ${props.className??''}`}
         onClick={props.onClick}
         >
-             <div className="absolute inline-flex justify-center 
-             items-center px-4 py-2 bg-black text-black rounded 
+             <div className="absolute inline-block text-center px-4 py-3 bg-black text-black rounded 
              cursor-pointer "
              style={{border:"1px solid #000"}}
              >
              {props.children??''}
              </div>
-            <div  className="absolute inline-flex justify-center 
-            items-center bg-white text-black px-4 py-2 rounded   
+            <div  className="absolute inline-block text-center
+             bg-white text-black px-4 py-3 rounded   
             cursor-pointer  zx-btn"
             style={{border:"1px solid #000"}}
             >

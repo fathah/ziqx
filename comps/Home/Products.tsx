@@ -16,7 +16,11 @@ const Products = () => {
         {name:"Fabex Framework", logo:"fabex.png"},
         {name:"ZiDG ZIqx Developers Group", logo:"zidg.png"},
     ];
-    return (<div className="bg-white py-8 px-4 lg:px-20">
+    return (<div className=" py-8 px-4 lg:px-20"
+    style={{
+        backgroundColor:"#f4f2ed"
+    }}
+    >
         <header className="mx-10 lg:mx-52 my-2">
             <h2 className="text-center text-gray-400 font-bold text-2xl">
                 OUR PRODUCTS</h2>
