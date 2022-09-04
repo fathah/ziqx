@@ -4,9 +4,10 @@ import Footer from '../comps/Footer';
 import Clients from '../comps/Clients';
 import Products from '../comps/Products';
 import Delivering from '../comps/Delivering';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import Cookies from 'js-cookie'
+import isLoggedHard from '../functions/isLogged';
 
 export default function Home() {
   const router = useRouter()
@@ -28,6 +29,9 @@ export default function Home() {
     }
   }, [router.isReady, router.query]);
 
+
+
+
   return (
   <div style={{
     backgroundImage:"url('/imgs/pattern.png')"
@@ -43,7 +47,7 @@ export default function Home() {
 <meta property="og:url" content="https://ziqx.in/"/>
 <meta property="og:title" content="Ziqx Creative Planet"/>
 <meta property="og:image" content="https://ziqx.in/meta/thumb.png"/>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon" />
 
   </Head>
   <NavBar/>
@@ -79,7 +83,9 @@ export default function Home() {
      <br /> without <br />
     <span className="bg-white inline-block px-2 pb-1">Ziqx</span>
     </h1>
-    <p className='mt-6 lg:w-7/12'>
+    <p className='mt-6 lg:w-7/12' data-aos="fade-up"
+      data-aos-duration="1200"
+    >
       Presenting digital solutions in a minimal & comprehensive eco-system.
     </p>
     {/* <button className="bg-yellow-400 hover:bg-yellow-500  lg:text-xl px-4 py-2 lg:py-3 rounded mt-3">Know More</button> */}

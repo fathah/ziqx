@@ -27,7 +27,7 @@ const Footer = () => {
                 }
                 </div>
                 <br /> <br />
-         <section className="flex justify-center"> <img src="/logo-w.png" className="opacity-40 w-16" alt="" /></section>
+         <section className="flex justify-center"> <img src="/imgs/logo-w.png" className="opacity-40 w-16" alt="" /></section>
             </div>
         </footer>
     );

@@ -1,8 +1,21 @@
+import { useEffect, useState } from "react"
+import isLoggedHard from "../functions/isLogged"
+
 const NavBar = () => {
-    const navItems = [
+    const [isLogged, setIsLogged] = useState(false)
+    useEffect(()=>{
+        
+        isLoggedHard().then((res)=>{
+          if(res){
+            setIsLogged(true)
+          }
+        })
+      },[])
+
+    let navItems = [
         {
-            title:"Account",
-            to:"https://account.ziqx.in",
+            title:isLogged?"Account":"Login",
+            to:isLogged?"https://account.ziqx.in":"https://account.ziqx.in/account?ref=ziqx",
         },
     ];
     return (
@@ -12,7 +25,7 @@ const NavBar = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
         >
-             <img src="/logo-w.png" className="w-2/12 md:w-16 lg:w-20" alt="ziqx" />
+             <img src="/imgs/logo-w.png" className="w-2/12 md:w-16 lg:w-20" alt="ziqx" />
 {
     navItems.map((item, index) => {
         return (
