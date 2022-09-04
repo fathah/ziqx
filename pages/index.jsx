@@ -46,7 +46,7 @@ export default function Home() {
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://ziqx.in/"/>
 <meta property="og:title" content="Ziqx Creative Planet"/>
-<meta property="og:image" content="https://ziqx.in/meta/thumb.png"/>
+<meta property="og:image" content="https://api.ziqx.in/meta/thumb.png"/>
 <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon" />
 
   </Head>
