@@ -29,8 +29,12 @@ const What = () => {
             you can focus on your core business.
              <div data-aos="fade-up"
   data-aos-delay="700">
-            <ZxButton className="mt-4">
-      Know More
+            <ZxButton className="mt-4"
+            onClick={()=>{
+                window.location.href='https://account.ziqx.in'
+               }}
+            >
+      Get Started
     </ZxButton></div>
             </div>
         </div>

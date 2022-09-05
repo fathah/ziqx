@@ -16,6 +16,9 @@ const BottomCTA = () => {
    style={{
     border:"1px solid black",
    }}
+   onClick={()=>{
+    window.location.href='https://account.ziqx.in'
+   }}
    >Join Ziqx. It's Free</button>
    </div>
            </div>
