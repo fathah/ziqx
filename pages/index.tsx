@@ -12,33 +12,6 @@ import What from '../comps/Home/What';
 import BottomCTA from '../comps/Home/BottomCTA';
 
 export default function Home() {
-  const router = useRouter()
-  const API_ROOT = "https://api.ziqx.in/auth/";
-
-
-  useEffect(() => {
-    if (!router.isReady) return;
-    const query = router.query;
-    if(query!=null && query.tok!=null && query.tok!=undefined){
-      let token = query.tok as string;
-      token = token.split("-")[1];
-       fetch(`${API_ROOT}validateJWT.php?token=${token}`)
-       .then(res=>res.json())
-       .catch(err=>console.log(err)).then((res)=>{
-        if(res.status=='success'){
-          Cookies.set('token', token);
-          router.push('/');
-        }else{
-          console.log('🎃 Token is invalid');
-        }
-       });
-
-      
-    }
-  }, [router.isReady, router.query]);
-
-
-
 
   return (
   <div style={{

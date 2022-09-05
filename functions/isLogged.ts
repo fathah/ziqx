@@ -13,18 +13,16 @@ const isLoggedHard = async()=>{
         const res = await fetch(`${API_ROOT}validateJWT.php?token=${token}`)
         .then(res=>res.json()).catch(err=>console.log(err));
         if(res.status=='success'){
-            return true;
+            return LoginStatus.LoggedIn;
         }else{
             console.log('error');
-            return false;
+            return LoginStatus.NetworkError;
         }
     }
     return LoginStatus.LoggedOut;
    } catch (error) {
-    console.log('erororor');
-    
     console.log(error);
-    return false;
+    return LoginStatus.NetworkError;
    }
     
     

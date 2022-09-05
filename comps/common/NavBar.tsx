@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
+import { LoginStatus } from "../../const/constants"
 import isLoggedHard from "../../functions/isLogged"
-import ZxButton from "../Layouts/ZxButton"
 
 const NavBar = () => {
     const [isLogged, setIsLogged] = useState<any>(null)
     useEffect(()=>{
         
         isLoggedHard().then((res)=>{
-          if(res){
+          if(res===LoginStatus.LoggedIn){
             setIsLogged(true)
           }else{
             setIsLogged(false)
@@ -27,7 +27,7 @@ const NavBar = () => {
              <img src="/imgs/logo-w.png" className="w-2/12 md:w-16 lg:w-20" alt="ziqx" />
 {/* {navItems.map((item, index) => {return (<a href={item.to} key={index} className={aClass}>{item.title}</a>);})} */}
 
-{isLogged!=null?<a href={isLogged?"https://account.ziqx.in":"https://account.ziqx.in/account?ref=ziqx"}
+{isLogged!==null?<a href={isLogged?"https://account.ziqx.in":"https://account.ziqx.in/?ref=https://ziqx.in"}
 className={aClass}
 >
     {isLogged?"Account":"Login"}</a>:<span></span>}
