@@ -78,7 +78,6 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
 }
 
 .zx-btn{
-  box-shadow: 0px 0px 0px rgba( 0, 0, 0, 1 );
   transition: 0.3s ease;
 }
 .zx-btn:hover{
@@ -86,6 +85,22 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
   
 }
 
+.zx-shadow-btn{
+  transition: 0.5s ease;
+}
+.zx-shadow-btn:hover{
+  box-shadow: 6px 6px 0px rgba( 0, 0, 0, 1 );
+  
+}
+
+
 .white-svg{
   filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(113deg) brightness(109%) contrast(101%);
+}
+
+.link{
+  transition: 0.5s ease;
+}
+.link:hover{
+  transform: translateY(-6px);
 }

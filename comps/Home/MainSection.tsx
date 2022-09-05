@@ -36,7 +36,8 @@ const MainSection = () => {
     <ZxButton className="mt-4"
     id="know"
     onClick={()=>{
-        window.location.href="#know"
+       document.getElementById('know')!.scrollIntoView();
+
     }}
     >
       Know More

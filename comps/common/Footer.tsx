@@ -11,7 +11,7 @@ const Footer = () => {
 
     ]
     return (
-        <footer className="bg-black text-white flex w-full justify-center py-12">
+        <footer className="bg-black text-white flex w-full justify-center py-12 ">
             <div className="text-center">
                 <div className="mx-10">
                 {
@@ -20,7 +20,7 @@ const Footer = () => {
                             <a href={link.to} key={index}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-gray-400 hover:text-gray-100 duration-300 inline-block mx-4 my-2"
+                            className="text-gray-400 hover:text-gray-50 duration-300 inline-block px-4 my-2 link"
                             >{link.title}</a>
                         )
                     )

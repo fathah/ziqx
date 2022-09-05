@@ -23,7 +23,7 @@ const Clients = () => {
                 TRUSTED BY</h2>
         </header>
         <Marquee
-        speed={10}
+        speed={25}
         gradientWidth={100}
         >
 
