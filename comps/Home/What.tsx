@@ -24,7 +24,7 @@ const What = () => {
             data-aos-delay="700"
             >
             A planet for creative pops, where developers, designers, branding strategists, 
-            marketers gather at one hub. 
+            marketers huddled at one hub. 
             We build simple, easy-to-use, comprehensive and minimal products, so that 
             you can focus on your core business.
              <div data-aos="fade-up"
