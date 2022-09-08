@@ -6,7 +6,7 @@ const Footer = () => {
         {title:"Tezt",to:"https://tezt.ziqx.in"},
         {title:"Zoozle",to:"https://zoozle.ziqx.in"},
         {title:"Zinga",to:"https://zinga.deta.dev"},
-        {title:"CDN",to:"https://cdn.ziqx.in"},
+        {title:"Privacy Policy",to:"https://ziqx.in/privacy"},
 
 
     ]
