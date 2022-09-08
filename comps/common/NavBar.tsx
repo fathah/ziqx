@@ -24,7 +24,9 @@ const NavBar = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
         >
-             <img src="/imgs/logo-w.png" className="w-2/12 md:w-16 lg:w-20" alt="ziqx" />
+             <img src="/imgs/logo-w.png" className="w-2/12 md:w-16 lg:w-20"
+             onClick={()=>window.location.href="/"}
+             alt="ziqx" />
 {/* {navItems.map((item, index) => {return (<a href={item.to} key={index} className={aClass}>{item.title}</a>);})} */}
 
 {isLogged!==null?<a href={isLogged?"https://account.ziqx.in":"https://account.ziqx.in/?ref=https://ziqx.in"}
