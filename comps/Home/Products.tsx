@@ -7,7 +7,7 @@ const Products = () => {
     {name:"Libstackz Library Management", logo:"libstackz.png",link:"https://libstackz.ziqx.in"},
     {name:"Manzil Developers", logo:"manzildev.png",link:"https://manzilmedia.net"},
     {name:"Tezt Online Tests", logo:"tezt.png",link:"https://tezt.ziqx.in"},
-    {name:"Bitpro ERP/POS Software", logo:"bitpro.png",link:""},
+    {name:"Botbox", logo:"botbox.png",link:"https://play.google.com/store/apps/details?id=in.ziqx.botbox"},
     {name:"Certiption", logo:"certiption.png",link:"https://certiption.com"},
     {name:"Faably SSLC Guide", logo:"faably.png",link:""},
     {name:"Zaimart Online Store", logo:"zaimart.png",link:""},
