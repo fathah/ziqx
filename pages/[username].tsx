@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import getUserData from "../functions/users/getUser";
 import { useRouter } from "next/router";
 import { MutatingDots } from "react-loader-spinner";
-import ZxButton from "../comps/Layouts/ZxButton";
 import QrCodeComp from "../comps/profile/QrCode";
 import MetaHead from "../comps/common/MetaHead";
 
@@ -83,5 +82,41 @@ useEffect(() => {
         </>
     );
 }
+
+
+
+// export const getStaticPaths: GetStaticPaths = async () => {
+//     // Fetch available user profile paths from an API or database
+//     const profilePaths = await fetch('https://api.example.com/profiles').then((res) => res.json());
+//     const paths = profilePaths.map((path: string) => ({
+//       params: { username: path },
+//     }));
+  
+//     return {
+//       paths,
+//       fallback: false,
+//     };
+//   };
+  
+//   export const getStaticProps: GetStaticProps = async ({ params }) => {
+//     if (!params || typeof params.username !== 'string') {
+//         return {
+//           notFound: true,
+//         };
+//       }
+
+//     const { username } = params;
+//     const profileData = await getUserData(username);
+  
+//     return {
+//       props: {
+//         profileData,
+//       },
+//     };
+//   };
+
+
+
+
 
 export default UserProfile;
