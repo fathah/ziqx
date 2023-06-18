@@ -7,12 +7,18 @@ import MetaHead from "../comps/common/MetaHead";
 import UserDetails from "../comps/profile/UserDetails";
 import Bio from "../comps/profile/Bio";
 import NavBar from "../comps/common/NavBar";
+import { getConnectionsCloud } from "../functions/connections/get";
 
 const UserProfile = () => {
 
 const [user, setUser] = useState<any>(null);
 
 const router = useRouter();
+
+
+useEffect(() => {
+    getConnectionsCloud();
+},[])
 
 useEffect(() => {
     if(router.isReady && router.query && router.query.username){

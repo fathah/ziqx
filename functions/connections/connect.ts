@@ -2,6 +2,7 @@ import axios from "axios";
 import { API_KEY, API_ROOT } from "../../const/constants";
 import { decodeToken } from "../decode";
 import Cookies from "js-cookie";
+import { getConnectionsCloud } from "./get";
 
 export async function addConnection(
     userId:string
@@ -24,7 +25,7 @@ export async function addConnection(
                   'Content-Type': 'application/json'
               }
           });
-      
+         await getConnectionsCloud()
           if (resp && resp.data.status == "success") {
             return true;
           } else {

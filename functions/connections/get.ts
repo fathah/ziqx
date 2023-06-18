@@ -17,8 +17,13 @@ export async function getConnectionsCloud(): Promise<boolean> {
               }
           });
       
-          if (resp && resp.data.status == "success") {
-                localStorage.setItem("connections",JSON.stringify(resp.data.connections))
+          if (resp) {
+            if(resp.data.status == "success"){
+              localStorage.setItem("connections",JSON.stringify(resp.data.connections))
+            }else if(resp.data.status == "no_connections"){
+              localStorage.setItem("connections",JSON.stringify([]))
+            }
+                
             return true;
           } else {
             console.log(resp);

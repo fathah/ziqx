@@ -12,9 +12,7 @@ const UserDetails = ({user}:{user:any}) => {
     const myUsername:any = decoded?decoded.username:null;
     const [isUserConnected, setIsUserConnected] = useState<any>(null);
 
-    useEffect(() => {
-        getConnectionsCloud();
-    },[])
+  
     useEffect(() => {
         if(user && isUserConnected==null){
             setIsUserConnected(isConnected(user.id));
