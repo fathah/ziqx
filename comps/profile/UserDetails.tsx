@@ -1,13 +1,30 @@
+import { useEffect, useState } from "react";
 import { decodeToken } from "../../functions/decode";
 import {AiOutlineUserAdd} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md';
+import { isConnected } from "../../functions/connections/isConnected";
+import { getConnectionsCloud } from "../../functions/connections/get";
+import { addConnection } from "../../functions/connections/connect";
 
 const UserDetails = ({user}:{user:any}) => {
     const decoded:any = decodeToken();
     const myUsername:any = decoded?decoded.username:null;
+    const [isUserConnected, setIsUserConnected] = useState<any>(null);
 
+    useEffect(() => {
+        getConnectionsCloud();
+    },[])
+    useEffect(() => {
+        if(user && isUserConnected==null){
+            setIsUserConnected(isConnected(user.id));
+        }
+    },[user])
 
     const btnCls:string = "flex items-center"
+
+
+
+
     return (
         <main className="flex">
             {/* PROFILE PIC */}
@@ -23,20 +40,23 @@ const UserDetails = ({user}:{user:any}) => {
 
 <div>{user.fullname && <h1 className="text-lg lg:text-xl font-bold mb-1">{user.fullname}</h1>}</div>
 <div>
-   <button className="zx-shadow-btn px-2 py-2 rounded-md border-2 border-black bg-black text-white hover:text-black hover:bg-yellow-400 text-xs"
+   <button 
+   className="zx-shadow-btn px-2 py-2 rounded-md border-2 border-black bg-black text-white hover:text-black hover:bg-yellow-400 text-xs"
    onClick={()=>{
          if(myUsername && myUsername==user.username){
               window.location.href="https://account.ziqx.in"
          }else{
-              alert("Coming Soon")
+              setIsUserConnected(!isUserConnected);
+              addConnection(user.id);
          }
    }}
+   disabled={myUsername && myUsername!=user.username && isUserConnected}
    >
     {
         myUsername && myUsername==user.username?
         <div  className={btnCls}><MdEdit  className="mr-1 text-base"/> Edit Profile</div>:
-        <div className={btnCls}>
-            <AiOutlineUserAdd className="mr-1 text-base"/> Connect</div>
+        <div className={btnCls} >
+            <AiOutlineUserAdd className="mr-1 text-base"/>{isUserConnected?'Connected':'Connect'} </div>
     }
    </button>
 </div>

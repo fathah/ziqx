@@ -12,8 +12,6 @@ const isLoggedHard = async()=>{
     if(token!=null && token!=undefined){
         const res = await fetch(`${API_ROOT}validateToken.php?token=${token}`)
         .then(res=>res.json()).catch(err=>console.log(err));
-        console.log(res);
-        
         if(res.status=='success'){
             return LoginStatus.LoggedIn;
         }else{
@@ -30,3 +28,11 @@ const isLoggedHard = async()=>{
     
 }
 export default isLoggedHard;
+
+export function isLogged(){
+    const token = Cookies.get('token');
+    if(token!=null && token!=undefined){
+        return true;
+    }
+    return false;
+}
