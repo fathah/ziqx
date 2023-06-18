@@ -92,7 +92,15 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
   box-shadow: 6px 6px 0px rgba( 0, 0, 0, 1 );
   
 }
+.zx-shadow-btn:disabled{
+  background: #fff;
+  color:#000;
 
+}
+.zx-shadow-btn:disabled:hover{
+  background: #fff;
+  
+}
 
 .white-svg{
   filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(113deg) brightness(109%) contrast(101%);

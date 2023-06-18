@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { decodeToken } from "../../functions/decode";
 import {AiOutlineUserAdd} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md';
+import {BiUserCheck} from 'react-icons/bi';
 import { isConnected } from "../../functions/connections/isConnected";
 import { getConnectionsCloud } from "../../functions/connections/get";
 import { addConnection } from "../../functions/connections/connect";
@@ -56,7 +57,10 @@ const UserDetails = ({user}:{user:any}) => {
         myUsername && myUsername==user.username?
         <div  className={btnCls}><MdEdit  className="mr-1 text-base"/> Edit Profile</div>:
         <div className={btnCls} >
-            <AiOutlineUserAdd className="mr-1 text-base"/>{isUserConnected?'Connected':'Connect'} </div>
+            {
+                isUserConnected? <BiUserCheck className="mr-1 text-base"/>:<AiOutlineUserAdd className="mr-1 text-base"/>
+            }
+            {isUserConnected?'Connected':'Connect'} </div>
     }
    </button>
 </div>
