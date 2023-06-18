@@ -35,7 +35,7 @@ useEffect(() => {
     return (
        <>
        <MetaHead title={user?`${user.username} on Ziqx`:"Discover on Ziqx"}/>
-       <div className="w-full flex justify-center items-center min-h-screen">
+       <div className="w-full flex justify-center  min-h-screen">
         {
             !user ?
             <div className="flex flex-col justify-center items-center">
@@ -54,7 +54,7 @@ useEffect(() => {
             </div>
             :
             user=="nan"?
-            <div className="w-full flex flex-col items-center lg:w-5/12 bg-white p-10 rounded-xl shadow-lg ">
+            <div className="w-11/12 my-10 flex flex-col items-center lg:w-5/12 bg-white p-10 rounded-xl shadow-lg ">
                 <img src="/imgs/logo.png" className="w-3/12 lg:w-2/12 my-6" alt="" />
                 <h1 className="text-lg text-gray-400 text-center mb-10">User not found</h1>
 
@@ -66,13 +66,16 @@ useEffect(() => {
 
 
             </div>:
-            <div className="w-11/12 flex flex-col items-center lg:w-5/12 bg-white p-10 rounded-xl shadow-lg">
+            <div className="w-11/12 my-10 flex flex-col items-center lg:w-5/12 bg-white p-10 rounded-xl shadow-lg">
                 <div className="bg-black text-white h-20 w-20 text-center flex justify-center items-center rounded-xl">
                     <p className="text-4xl">{user.username && user.username[0]}</p>
                 </div>
                 <div>{user.username && <h1 className="text-gray-500 italic text-center mt-1">@{user.username}</h1>}</div>
 
                 <div>{user.fullname && <h1 className="text-2xl font-bold text-center mt-3">{user.fullname}</h1>}</div>
+                <div>{user.bio && <h1 className="text-center mt-3">{user.bio}</h1>}</div>
+
+
                 <br />
                 <QrCodeComp username={user.username}/>
             </div>
