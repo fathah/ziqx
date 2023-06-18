@@ -10,7 +10,7 @@ const isLoggedHard = async()=>{
     const token = Cookies.get('token');
    try {
     if(token!=null && token!=undefined){
-        const res = await fetch(`${API_ROOT}validateJWT.php?token=${token}`)
+        const res = await fetch(`${API_ROOT}validateToken.php?token=${token}`)
         .then(res=>res.json()).catch(err=>console.log(err));
         if(res.status=='success'){
             return LoginStatus.LoggedIn;
