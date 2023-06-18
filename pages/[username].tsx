@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import { MutatingDots } from "react-loader-spinner";
 import QrCodeComp from "../comps/profile/QrCode";
 import MetaHead from "../comps/common/MetaHead";
+import UserDetails from "../comps/profile/UserDetails";
+import Bio from "../comps/profile/Bio";
+import NavBar from "../comps/common/NavBar";
 
 const UserProfile = () => {
 
@@ -35,6 +38,8 @@ useEffect(() => {
     return (
        <>
        <MetaHead title={user?`${user.username} on Ziqx`:"Discover on Ziqx"}/>
+       <NavBar/>
+       <div className="h-12"></div>
        <div className="w-full flex justify-center  min-h-screen">
         {
             !user ?
@@ -66,16 +71,10 @@ useEffect(() => {
 
 
             </div>:
-            <div className="w-11/12 my-10 flex flex-col items-center lg:w-5/12 bg-white p-10 rounded-xl shadow-lg">
-                <div className="bg-black text-white h-20 w-20 text-center flex justify-center items-center rounded-xl">
-                    <p className="text-4xl">{user.username && user.username[0]}</p>
-                </div>
-                <div>{user.username && <h1 className="text-gray-500 italic text-center mt-1">@{user.username}</h1>}</div>
-
-                <div>{user.fullname && <h1 className="text-2xl font-bold text-center mt-3">{user.fullname}</h1>}</div>
-                <div>{user.bio && <h1 className="text-center mt-3">{user.bio}</h1>}</div>
-
-
+            <div className="w-11/12 my-10  lg:w-5/12 bg-white p-10 rounded-xl shadow-lg">
+                
+                {user && <UserDetails user={user}/>}
+{user && <Bio user={user}/>}
                 <br />
                 <QrCodeComp username={user.username}/>
             </div>

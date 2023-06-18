@@ -20,8 +20,8 @@ useEffect(() => {
   });
 }, []);
 
-
-  return <Component {...pageProps} />
+//div data-theme="ziqxTheme"><Component {...pageProps} /></div> 
+  return   <Component {...pageProps} />
 }
 
 export default MyApp
