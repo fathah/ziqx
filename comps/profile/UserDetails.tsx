@@ -1,9 +1,13 @@
 import { decodeToken } from "../../functions/decode";
 import {AiOutlineUserAdd} from 'react-icons/ai';
+import {MdEdit} from 'react-icons/md';
 
 const UserDetails = ({user}:{user:any}) => {
     const decoded:any = decodeToken();
     const myUsername:any = decoded?decoded.username:null;
+
+
+    const btnCls:string = "flex items-center"
     return (
         <main className="flex">
             {/* PROFILE PIC */}
@@ -19,7 +23,7 @@ const UserDetails = ({user}:{user:any}) => {
 
 <div>{user.fullname && <h1 className="text-lg lg:text-xl font-bold mb-1">{user.fullname}</h1>}</div>
 <div>
-   <button className="zx-shadow-btn px-2 py-1 rounded-lg border-2 border-black hover:bg-yellow-400 text-xs"
+   <button className="zx-shadow-btn px-2 py-2 rounded-md border-2 border-black bg-black text-white hover:text-black hover:bg-yellow-400 text-xs"
    onClick={()=>{
          if(myUsername && myUsername==user.username){
               window.location.href="https://account.ziqx.in"
@@ -30,9 +34,9 @@ const UserDetails = ({user}:{user:any}) => {
    >
     {
         myUsername && myUsername==user.username?
-        <div>Edit Profile</div>:
-        <div className="flex items-center">
-            <AiOutlineUserAdd className="mr-1 text-lg"/> Connect</div>
+        <div  className={btnCls}><MdEdit  className="mr-1 text-base"/> Edit Profile</div>:
+        <div className={btnCls}>
+            <AiOutlineUserAdd className="mr-1 text-base"/> Connect</div>
     }
    </button>
 </div>
