@@ -15,11 +15,11 @@ const UserDetails = ({user}:{user:any}) => {
            
            {/* USER DETAILS */}
                <section className="flex flex-col justify-center px-6">
-               <div>{ <h1 className="text-gray-500 italic text-sm">{user.username?'@'+user.username:""}</h1>}</div>
+               <div>{ <h1 className="text-gray-500 text-xs">{user.username?'@'+user.username:""}</h1>}</div>
 
-<div>{user.fullname && <h1 className="text-2xl font-bold mb-1">{user.fullname}</h1>}</div>
+<div>{user.fullname && <h1 className="text-lg lg:text-xl font-bold mb-1">{user.fullname}</h1>}</div>
 <div>
-   <button className="zx-shadow-btn px-2 py-1 rounded-lg border-2 border-black hover:bg-yellow-400"
+   <button className="zx-shadow-btn px-2 py-1 rounded-lg border-2 border-black hover:bg-yellow-400 text-xs"
    onClick={()=>{
          if(myUsername && myUsername==user.username){
               window.location.href="https://account.ziqx.in"
@@ -31,7 +31,8 @@ const UserDetails = ({user}:{user:any}) => {
     {
         myUsername && myUsername==user.username?
         <div>Edit Profile</div>:
-        <div className="flex items-center"><AiOutlineUserAdd className="mr-1"/> Connect</div>
+        <div className="flex items-center">
+            <AiOutlineUserAdd className="mr-1 text-lg"/> Connect</div>
     }
    </button>
 </div>
