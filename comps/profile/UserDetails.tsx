@@ -7,6 +7,13 @@ import { isConnected } from "../../functions/connections/isConnected";
 import { getConnectionsCloud } from "../../functions/connections/get";
 import { addConnection } from "../../functions/connections/connect";
 
+
+enum ConnectionStatus{
+    connected,
+    notConnected,
+    pending
+}
+
 const UserDetails = ({user}:{user:any}) => {
     const decoded:any = decodeToken();
     const myUsername:any = decoded?decoded.username:null;
@@ -15,7 +22,14 @@ const UserDetails = ({user}:{user:any}) => {
   
     useEffect(() => {
         if(user && isUserConnected==null){
-            setIsUserConnected(isConnected(user.id));
+            const conStatus:number = isConnected(user.id);
+            if(conStatus==1){
+                setIsUserConnected(ConnectionStatus.connected);
+            } else if (conStatus == 0){
+                setIsUserConnected(ConnectionStatus.pending);
+            }else{
+                setIsUserConnected(ConnectionStatus.notConnected);
+            }
         }
     },[user])
 
@@ -45,20 +59,22 @@ const UserDetails = ({user}:{user:any}) => {
          if(myUsername && myUsername==user.username){
               window.location.href="https://account.ziqx.in"
          }else{
-              setIsUserConnected(!isUserConnected);
+              setIsUserConnected(ConnectionStatus.pending);
               addConnection(user.id);
          }
    }}
-   disabled={myUsername && myUsername!=user.username && isUserConnected}
+   disabled={myUsername && myUsername!=user.username && isUserConnected!==ConnectionStatus.notConnected}
    >
     {
         myUsername && myUsername==user.username?
         <div  className={btnCls}><MdEdit  className="mr-1 text-base"/> Edit Profile</div>:
         <div className={btnCls} >
             {
-                isUserConnected? <BiUserCheck className="mr-1 text-base"/>:<AiOutlineUserAdd className="mr-1 text-base"/>
+                isUserConnected!==ConnectionStatus.notConnected? <BiUserCheck className="mr-1 text-base"/>:<AiOutlineUserAdd className="mr-1 text-base"/>
             }
-            {isUserConnected?'Connected':'Connect'} </div>
+            {isUserConnected==ConnectionStatus.connected?'Connected':
+            isUserConnected==ConnectionStatus.pending?'Pending':
+            'Connect'} </div>
     }
    </button>
 </div>

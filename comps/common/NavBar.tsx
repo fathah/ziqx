@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react"
 import { LoginStatus } from "../../const/constants"
 import isLoggedHard from "../../functions/isLogged"
+import NavActions from "../user/NavActions";
 
 const NavBar = () => {
-    const [isLogged, setIsLogged] = useState<any>(null)
-    useEffect(()=>{
-        
-        isLoggedHard().then((res)=>{
-          if(res===LoginStatus.LoggedIn){
-            setIsLogged(true)
-          }else{
-            setIsLogged(false)
-          }
-        })
-      },[])
+    
 
     let navItems = [{title:"",to:"",},];
     const aClass = "bg-white text-gray-600 hover:bg-yellow-400 hover:text-black duration-300 inline-block px-4 py-1 lg:py-2  rounded";
@@ -29,11 +20,7 @@ const NavBar = () => {
              alt="ziqx" />
 {/* {navItems.map((item, index) => {return (<a href={item.to} key={index} className={aClass}>{item.title}</a>);})} */}
 
-{isLogged!==null?<a href={isLogged?"https://account.ziqx.in":"https://account.ziqx.in/?ref=https://ziqx.in"}
-className={aClass}
->
-    {isLogged?"Account":"Login"}</a>:<span></span>}
-
+<NavActions/>
         </nav>
     );
 }
