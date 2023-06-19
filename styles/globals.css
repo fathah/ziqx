@@ -31,11 +31,11 @@ html{
 }
 
   body{
-    background-color: #f4f2ed;
+    background-color: #f4f2ed !important;
     overflow-x: hidden;
   }
   .bg-pale{
-    background-color: #f4f2ed;
+    background-color: #f4f2ed
   }
   .nav{
     background: rgba( 255, 255, 255, 0.25 );

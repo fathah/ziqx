@@ -42,7 +42,7 @@ useEffect(() => {
 
 
     return (
-       <>
+       <main className="bg-cream-50">
        <MetaHead title={user?`${user.username} on Ziqx`:"Discover on Ziqx"}/>
        <NavBar/>
        <div className="h-12"></div>
@@ -87,7 +87,7 @@ useEffect(() => {
         }
         </div>
         
-        </>
+        </main>
     );
 }
 

@@ -16,16 +16,15 @@ export async function getConnectionsCloud(): Promise<boolean> {
                   'Content-Type': 'application/json'
               }
           });
-      
-          if (resp) {
-            if(resp.data.status == "success"){
-              localStorage.setItem("connections",JSON.stringify(resp.data.connections))
+         
+            if(resp && resp.data.status == "success"){
+              localStorage.setItem("connections",JSON.stringify(resp.data.connections));
+              return true;
             }else if(resp.data.status == "no_connections"){
-              localStorage.setItem("connections",JSON.stringify([]))
+              localStorage.setItem("connections",JSON.stringify([]));
+              return true;
             }
-                
-            return true;
-          } else {
+           else {
             console.log(resp);
           }
         } catch (error) {

@@ -8,6 +8,7 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import { getConnectionsCloud } from '../functions/connections/get';
 import { isLogged } from '../functions/isLogged';
+import ConnectionsModal from '../comps/user/ConnectionsModal';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -27,8 +28,8 @@ useEffect(() => {
   });
 }, []);
 
-//div data-theme="ziqxTheme"><Component {...pageProps} /></div> 
-  return   <Component {...pageProps} />
+
+  return   <div data-theme="ziqxTheme"><Component {...pageProps} /> <ConnectionsModal/></div> 
 }
 
 export default MyApp
