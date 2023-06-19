@@ -60,7 +60,6 @@ const btnCmnClass = "flex items-center zx-shadow-btn px-2 py-1  border border-bl
                         <BeatLoader color="#fff" size={7} className="mt-1"/>
                         :"Accept" }</span>
                          </button>
-                        
                     <button className={`${btnCmnClass} ml-2 hover:bg-red-600 hover:text-white`}
                     onClick={()=>{
                         setSelectedId(`ignore-${index}`);
