@@ -8,7 +8,11 @@ const ConnectionContextProvider = (pops:any) => {
   useEffect(() => {
     const storedData = localStorage.getItem('connections');
     if (storedData) {
-      setMyData(JSON.parse(storedData));
+      try {
+        setMyData(JSON.parse(storedData));
+      } catch (error) {
+        console.log('Error parsing connections',error);
+      }
     }
   }, []);
 
