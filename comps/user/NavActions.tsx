@@ -23,13 +23,15 @@ const connections = useContext(ConnectionContext);
             if(decoded){
                 setUsername(decoded.username);
             }
-              if(getPendingConnections(connections).length>0){
-                   setHasPending(true);
-              }
-            
-            
             }
    },[])
+
+
+   useEffect(() => {
+    if(logged){
+         if(getPendingConnections(connections).length>0)setHasPending(true);
+       }
+},[connections])
    
    const router = useRouter();
     return (
