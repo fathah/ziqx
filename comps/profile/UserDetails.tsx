@@ -23,7 +23,9 @@ const UserDetails = ({user}:{user:any}) => {
     const connections = useContext(ConnectionContext);
 
     useEffect(() => {
-        if(user && isUserConnected==null){
+        if(user && (isUserConnected==null || isUserConnected==ConnectionStatus.notConnected)){
+            console.log('Checked');
+            
             const conStatus:number = isConnected(user.id,connections);
             if(conStatus==1){
                 setIsUserConnected(ConnectionStatus.connected);
@@ -33,7 +35,7 @@ const UserDetails = ({user}:{user:any}) => {
                 setIsUserConnected(ConnectionStatus.notConnected);
             }
         }
-    },[user])
+    },[user,connections])
 
     const btnCls:string = "flex items-center"
 

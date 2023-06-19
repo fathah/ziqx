@@ -40,7 +40,6 @@ useEffect(() => {
     
 },[router]);
 
-
     return (
        <main className="bg-cream-50">
        <MetaHead title={user?`${user.username} on Ziqx`:"Discover on Ziqx"}/>
