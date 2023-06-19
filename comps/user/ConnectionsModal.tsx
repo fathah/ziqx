@@ -27,7 +27,7 @@ useEffect(()=>{
       
     }
 
-const btnCmnClass = "flex items-center zx-shadow-btn px-2 py-1  border border-black rounded-full text-xl"
+const btnCmnClass = "flex items-center zx-shadow-btn p-3  border border-black rounded-full text-xl"
 
     return (
         <div className="z-50">
@@ -56,18 +56,14 @@ const btnCmnClass = "flex items-center zx-shadow-btn px-2 py-1  border border-bl
                          setSelectedId(`accept-${index}`)
                     }}
                     >
-                        <MdDone/> <span className="text-xs mx-1">{selectedId==`accept-${index}`?
-                        <BeatLoader color="#fff" size={7} className="mt-1"/>
-                        :"Accept" }</span>
+                        <MdDone/>
                          </button>
                     <button className={`${btnCmnClass} ml-2 hover:bg-red-600 hover:text-white`}
                     onClick={()=>{
                         setSelectedId(`ignore-${index}`);
                     }}
                     >
-                      <MdClose/> <span className="text-xs mx-1">{selectedId==`ignore-${index}`?
-                      <BeatLoader color="#000" size={7} className="mt-1"/>
-                      :"Ignore" }</span>
+                       <MdClose/>
                         
                         </button>
                 </div>
