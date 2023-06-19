@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { getConnectionsCloud } from '../functions/connections/get';
 import { isLogged } from '../functions/isLogged';
 import ConnectionsModal from '../comps/user/ConnectionsModal';
+import { ConnectionContextProvider } from '@/context/ConnectionContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -29,7 +30,11 @@ useEffect(() => {
 }, []);
 
 
-  return   <div data-theme="ziqxTheme"><Component {...pageProps} /> <ConnectionsModal/></div> 
+  return   <div data-theme="ziqxTheme">
+    <ConnectionContextProvider>
+    <Component {...pageProps} /> <ConnectionsModal/>
+    </ConnectionContextProvider>
+    </div> 
 }
 
 export default MyApp

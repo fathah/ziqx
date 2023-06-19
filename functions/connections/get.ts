@@ -44,11 +44,11 @@ export async function getConnectionsCloud(): Promise<boolean> {
          return [];
    }
 
-   export function getPendingConnections():Array<any>{
+   export function getPendingConnections(conns?:any):Array<any>{
     const decoded = decodeToken();
     const userId:any = decoded.uid;
 
-    const connections:any = localStorage.getItem("connections");
+    const connections:any = conns ?? localStorage.getItem("connections");
     if(connections && decoded && userId){
       const parsed = JSON.parse(connections);
       const pending:Array<any> = parsed.filter((con:any)=>con.con_status=='0' && con.con_userId==userId);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { decodeToken } from "../../functions/decode";
 import {AiOutlineUserAdd} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md';
@@ -6,6 +6,7 @@ import {BiUserCheck} from 'react-icons/bi';
 import { isConnected } from "../../functions/connections/isConnected";
 import { getConnectionsCloud } from "../../functions/connections/get";
 import { addConnection } from "../../functions/connections/connect";
+import { ConnectionContext } from "@/context/ConnectionContext";
 
 
 enum ConnectionStatus{
@@ -19,10 +20,11 @@ const UserDetails = ({user}:{user:any}) => {
     const myUsername:any = decoded?decoded.username:null;
     const [isUserConnected, setIsUserConnected] = useState<any>(null);
 
-  
+    const connections = useContext(ConnectionContext);
+
     useEffect(() => {
         if(user && isUserConnected==null){
-            const conStatus:number = isConnected(user.id);
+            const conStatus:number = isConnected(user.id,connections);
             if(conStatus==1){
                 setIsUserConnected(ConnectionStatus.connected);
             } else if (conStatus == 0){

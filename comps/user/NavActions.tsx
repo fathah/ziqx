@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext  } from "react";
 import { isLogged } from "../../functions/isLogged";
 import { BiUser } from "react-icons/bi";
 import { LuUsers } from "react-icons/lu";
 import { getPendingConnections } from "../../functions/connections/get";
 import { decodeToken } from "../../functions/decode";
 import { useRouter } from "next/router";
-import ConnectionsModal from "./ConnectionsModal";
 import { connRequestModal } from "../../functions/utils/modalClicks";
+import { ConnectionContext, ConnectionContextProvider } from "@/context/ConnectionContext";
 
 const NavActions = () => {
     const logged:boolean = isLogged();
     const [hasPending, setHasPending] = useState<boolean>(false);
 const [username, setUsername] = useState<string>("");
+
+const connections = useContext(ConnectionContext);
 
     const itemClass = "relative p-2 border border-white rounded-md mx-2 hover:text-black hover:bg-white hover:scale-105 duration-300 cursor-pointer"
    
@@ -21,7 +23,7 @@ const [username, setUsername] = useState<string>("");
             if(decoded){
                 setUsername(decoded.username);
             }
-              if(getPendingConnections().length>0){
+              if(getPendingConnections(connections).length>0){
                    setHasPending(true);
               }
             
