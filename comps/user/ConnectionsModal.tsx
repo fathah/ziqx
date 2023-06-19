@@ -52,18 +52,20 @@ const btnCmnClass = "flex items-center zx-shadow-btn p-3  border border-black ro
                 </div>
                 <div className="flex items-center">
                     <button className={`${btnCmnClass} bg-black text-white hover:bg-yellow-500 hover:text-black`}
+                    
                     onClick={()=>{
                          setSelectedId(`accept-${index}`)
                     }}
                     >
-                        <MdDone/>
+                        <MdDone className={`${selectedId=='accept-'+index?'rotate-icon':''}`}/>
                          </button>
                     <button className={`${btnCmnClass} ml-2 hover:bg-red-600 hover:text-white`}
+                    
                     onClick={()=>{
                         setSelectedId(`ignore-${index}`);
                     }}
                     >
-                       <MdClose/>
+                       <MdClose className={`${selectedId=='ignore-'+index?'rotate-icon':''}`}/>
                         
                         </button>
                 </div>
