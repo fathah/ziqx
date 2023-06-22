@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react"
-import { LoginStatus } from "../../const/constants"
-import isLoggedHard from "../../functions/isLogged"
 import NavActions from "../user/NavActions";
 
 const NavBar = () => {

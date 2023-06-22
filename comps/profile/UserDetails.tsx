@@ -58,7 +58,7 @@ const UserDetails = ({user}:{user:any}) => {
 <div>{user.fullname && <h1 className="text-lg lg:text-xl font-bold mb-1">{user.fullname}</h1>}</div>
 <div>
    <button 
-   className="zx-shadow-btn px-2 py-2 rounded-md border-2 border-black bg-black text-white hover:text-black hover:bg-yellow-400 text-xs"
+   className="button text-xs"
    onClick={()=>{
          if(myUsername && myUsername==user.username){
               window.location.href="https://account.ziqx.in"

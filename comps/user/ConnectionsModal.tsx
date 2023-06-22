@@ -27,7 +27,7 @@ useEffect(()=>{
       
     }
 
-const btnCmnClass = "flex items-center zx-shadow-btn p-3  border border-black rounded-full text-xl"
+const btnCmnClass = "button flex items-center zx-shadow-btn p-3  border border-black rounded-full text-xl"
 
     return (
         <div className="z-50">
