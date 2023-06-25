@@ -53,7 +53,9 @@ useEffect(() => {
 
     return (
        <main className="bg-cream-50">
-       <MetaHead title={user?`${user.username} on Ziqx`:"Discover on Ziqx"}/>
+       <MetaHead title={profileData?`@${profileData.data.username} on Ziqx`:"Discover on Ziqx"}
+       description="Connect with people on Ziqx"
+       />
        <NavBar/>
        <div className="h-12"></div>
        <div className="w-full flex justify-center  min-h-screen">
