@@ -8,8 +8,9 @@ import UserDetails from "../comps/profile/UserDetails";
 import Bio from "../comps/profile/Bio";
 import NavBar from "../comps/common/NavBar";
 import { getConnectionsCloud } from "../functions/connections/get";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-const UserProfile = () => {
+const UserProfile = ({profileData}:{profileData:any}) => {
 
 const [user, setUser] = useState<any>(null);
 
@@ -21,24 +22,34 @@ useEffect(() => {
 },[])
 
 useEffect(() => {
-    if(router.isReady && router.query && router.query.username){
-        const usName:any = router.query.username;
-        getUserData(usName).then((data) => {
-            if(data){
-                if(data.status=="available"){
-                    setUser(data.data);
-                }else{
-                    setUser("nan");
-                }
-            }
-            
-        }).catch((err) =>{
-            console.log('Us Erro', err);
-            
-        });
+    if(profileData){
+        if(profileData.status=="available"){
+            setUser(profileData.data);
+        }else{
+            setUser("nan");
+        }
     }
+},[profileData]);
+
+// useEffect(() => {
+//     if(router.isReady && router.query && router.query.username){
+//         const usName:any = router.query.username;
+//         getUserData(usName).then((data) => {
+//             if(data){
+//                 if(data.status=="available"){
+//                     setUser(data.data);
+//                 }else{
+//                     setUser("nan");
+//                 }
+//             }
+            
+//         }).catch((err) =>{
+//             console.log('Us Erro', err);
+            
+//         });
+//     }
     
-},[router]);
+// },[router]);
 
     return (
        <main className="bg-cream-50">
@@ -92,35 +103,27 @@ useEffect(() => {
 
 
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//     // Fetch available user profile paths from an API or database
-//     const profilePaths = await fetch('https://api.example.com/profiles').then((res) => res.json());
-//     const paths = profilePaths.map((path: string) => ({
-//       params: { username: path },
-//     }));
+export const getStaticPaths: GetStaticPaths = async () => ({
+    paths: [], 
+    fallback: 'blocking', 
+  });
   
-//     return {
-//       paths,
-//       fallback: false,
-//     };
-//   };
-  
-//   export const getStaticProps: GetStaticProps = async ({ params }) => {
-//     if (!params || typeof params.username !== 'string') {
-//         return {
-//           notFound: true,
-//         };
-//       }
+  export const getStaticProps: GetStaticProps = async ({ params }) => {
+    if (!params || typeof params.username !== 'string') {
+        return {
+          notFound: true,
+        };
+      }
 
-//     const { username } = params;
-//     const profileData = await getUserData(username);
+    const { username } = params;
+    const profileData = await getUserData(username);
   
-//     return {
-//       props: {
-//         profileData,
-//       },
-//     };
-//   };
+    return {
+      props: {
+        profileData,
+      },
+    };
+  };
 
 
 
