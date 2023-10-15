@@ -48,6 +48,7 @@ if(!roomId){
       }}
       userInfo={{
         displayName: '',
+        email:""
       }}
       onApiReady={(externalApi) => {
         console.log(externalApi);
