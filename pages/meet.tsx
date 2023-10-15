@@ -41,6 +41,7 @@ if(!roomId){
         disableModeratorIndicator: true,
         startScreenSharing: true,
         enableEmailInStats: false,
+        prejoinPageEnabled: false
       }}
       interfaceConfigOverwrite={{
         DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
